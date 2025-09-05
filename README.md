@@ -30,3 +30,42 @@ Un ecosistema creciente lleno de bibliotecas y herramientas útiles.
 Una comunidad colaborativa, vigente y en expansión, que facilita el aprendizaje continuo y la mejora de habilidades.
 Una filosofía claramente definida que apuesta por la simplicidad y eficiencia tecnológica, simbolizada por la mascota oficial del lenguaje, el Gopher.
 Go es, por lo tanto, más que solo código; representa un estilo de desarrollo orientado al máximo rendimiento con el uso mínimo de recursos.
+
+## Clase 2: Instalación de Go en Ubuntu con WSL y Visual Studio Code
+
+Resumen
+
+¿Quieres empezar a programar en Go rápidamente? La instalación ahora es más sencilla gracias a WSL y el administrador de paquetes Snap en Ubuntu, facilitando que en solo un comando tengas todo listo para trabajar. Además, complementado con Visual Studio Code y la extensión oficial de Go, puedes mejorar enormemente tu experiencia de desarrollo.
+
+¿Cómo instalar Go en Ubuntu usando Snap y WSL?
+Instalar Go en tu máquina a través de WSL con Ubuntu es simple. Solo abre tu terminal y ejecuta el siguiente comando:
+
+sudo snap install go
+Luego, confirma la instalación ejecutando:
+
+go version
+Gracias a Snap, Go se actualizará automáticamente, lo que simplifica aún más el mantenimiento.
+
+¿Qué ventajas ofrece utilizar Visual Studio Code para desarrollar en Go?
+Visual Studio Code junto con su extensión oficial para Go, creada por el equipo de Google, ofrece funcionalidades esenciales como:
+
+Mejor soporte para IntelliSense.
+Eficaz marcado de sintaxis.
+Indicaciones útiles para importar y usar paquetes necesarios.
+Solo escribe "Go" en el buscador de extensiones e instala la proporcionada por Google para contar con estas facilidades.
+
+¿Cuáles son los principales comandos para trabajar con Go?
+Aprender a usar los comandos básicos es fundamental para trabajar en Go:
+
+go run: Ejecuta directamente tu código sin generar archivos adicionales, ideal para entornos locales.
+go build: Crea un archivo compilado que puedes ejecutar para pruebas más detalladas o para desplegar la aplicación en entornos remotos.
+Ejemplo práctico para ejecutar un programa:
+
+go run main.go
+Para generar archivos ejecutables utiliza:
+
+go build main.go
+./main
+Los comandos go run y go build serán de uso frecuente según tus necesidades específicas cuando desarrollas aplicaciones en Go.
+
+Recuerda que a medida que avanzas, podrás profundizar aún más en cómo aprovechar al máximo todo lo que Go tiene para ofrecer. ¿Qué te ha parecido trabajar con Go y Visual Studio Code hasta ahora? ¡Comparte tu experiencia!
