@@ -69,3 +69,77 @@ go build main.go
 Los comandos go run y go build serán de uso frecuente según tus necesidades específicas cuando desarrollas aplicaciones en Go.
 
 Recuerda que a medida que avanzas, podrás profundizar aún más en cómo aprovechar al máximo todo lo que Go tiene para ofrecer. ¿Qué te ha parecido trabajar con Go y Visual Studio Code hasta ahora? ¡Comparte tu experiencia!
+
+## Clase 3: Gestión de paquetes e imports en Go
+
+Resumen
+
+Go se destaca por su rapidez, eficiencia y tamaño reducido, características que derivan en particularidades clave que todo programador debería conocer. La utilización eficiente de paquetes y la gestión estricta de imports son elementos esenciales que diferencian a Go de lenguajes como Python, Node o Java.
+
+¿Qué sucede específicamente con los paquetes en Go?
+A diferencia de otros lenguajes como Python que cuentan con sistemas como pip, Node con npm o .Net con nugget, Go no utiliza un manejador de paquetes externo. En Go, los paquetes se importan directamente según su utilidad específica, asegurando así la optimización del rendimiento.
+
+Al importar elementos como FMT y OS, Go automáticamente verifica qué paquetes se están utilizando realmente. Si se importa un paquete y no se utiliza, Go lo señala explícitamente mediante avisos, lo que previene errores y optimiza el tamaño de compilación.
+
+¿Cómo gestionar adecuadamente los paquetes?
+Para importar paquetes en Go correctamente:
+
+Usa la sintaxis apropiada con la palabra clave import.
+Evita cargar paquetes que no se usarán realmente.
+Revisa constantemente los mensajes del IDE donde Go indica paquetes sin utilizar.
+Por ejemplo:
+
+```Go
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    envVar := os.Getenv("HOME")
+    if envVar == "" {
+        fmt.Println("La variable HOME no está configurada")
+    } else {
+        fmt.Println("HOME sí está configurada y es:", envVar)
+    }
+}
+```
+
+¿Cuál es la utilidad práctica del uso estricto de paquetes?
+La optimización de paquetes tiene efectos inmediatos y visibles:
+
+Menor tamaño y mayor velocidad en la aplicación final.
+Mejora notoria en rendimiento, tanto en compilación como en ejecución.
+Código más limpio, claro y conciso.
+¿Qué sucede si importamos paquetes innecesarios?
+Go no permite compilar códigos con paquetes extras que no estén siendo utilizados directamente, mostrando un aviso específico en el IDE y evitando que la compilación se concrete, promoviendo así un rendimiento óptimo.
+
+¿Cómo crear archivos u obtener variables ambientales utilizando paquetes?
+Usando el paquete os se puede acceder a variables ambientales fácilmente, además de gestionar archivos nuevos directamente desde el código escrito.
+
+Ejemplo para generar un archivo desde Go:
+
+package main
+
+```Go
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    file, err := os.Create("ejemplo.txt")
+    if err != nil {
+        fmt.Println("Error en creación del archivo:", err)
+        return
+    }
+    defer file.Close()
+    fmt.Println("Archivo creado exitosamente")
+}
+```
+
+Esta gestión directa refuerza un control estricto sobre las dependencias utilizadas dentro del código, garantizando que solamente se incluya aquello que se necesita expresamente.
+
+Cuéntame, ¿habías observado ya esta gestión de paquetes en tus proyectos con Go?
