@@ -303,3 +303,64 @@ Al hacerlo, tendrás inmediato feedback visual sobre las condiciones aplicadas.
 Te recomiendo practicar variando los tipos de datos como enteros, booleanos o decimales para entender sus peculiaridades. Utiliza valores diferentes en condiciones similares para consolidar tu comprensión y afiánzate con la sintaxis de Go.
 
 ¿Qué resultados obtuviste en tus prácticas? Deja tus experiencias o dudas sobre el uso de condicionales en Go en los comentarios.
+
+## Clase 7: Sintaxis y variaciones del ciclo for en Go
+
+Resumen
+
+Dominar los ciclos for en el lenguaje Go es esencial para cualquier desarrollador, pues permiten realizar iteraciones y repeticiones de código de manera sencilla. Aunque estos ciclos pueden parecer complejos al principio, la práctica constante facilita su entendimiento.
+
+¿Qué es un ciclo for en Go?
+En Go, el ciclo for nos permite ejecutar un fragmento de código múltiples veces según una condición específica. La estructura básica incluye una variable comúnmente llamada i, posiblemente derivada de la palabra "iteración".
+
+Ejemplo básico de uso de for:
+
+for i := 1; i < 3; i++ {
+    fmt.Println(i)
+}
+¿Qué opciones tengo para incrementar variables en Go?
+Existen tres formas equivalentes de aumentar valores:
+
+i++ (la más utilizada por convención).
+i += 1.
+i = i + 1.
+El uso de i++ suele ser más popular por costumbre y simplicidad.
+
+¿Cómo usar for declarado con distintos tipos de estructura?
+Go ofrece diversas formas de utilizar ciclos for, adaptando cada una a necesidades específicas:
+
+¿Cómo declarar variables dentro del ciclo for?
+Puedes declarar y asignar una variable directamente dentro del ciclo:
+
+for num := 0; num <= 3; num++ {
+    fmt.Println(num)
+}
+Esto simplifica el código, pues no necesitas declarar la variable previamente.
+
+¿Cómo definir rangos en ciclos for?
+Otra posibilidad es definir un rango numérico que se itere automáticamente:
+
+for rango := range [3]int{} {
+    fmt.Println(rango)
+}
+Aquí, la iteración inicia desde cero por defecto hasta el límite especificado.
+
+¿Qué ocurre con ciclos for sin condiciones explícitas?
+Un ciclo for sin condiciones explícitas es posible, pero requiere una forma de detenerlo utilizando palabras reservadas como break.
+
+for {
+    fmt.Println("loop")
+    break // Interrumpe el ciclo inmediatamente
+}
+¿Cómo condiciono un ciclo usando sentencias if?
+También podemos mezclar ciclos for con sentencias if. Por ejemplo:
+
+for valor := range [6]int{} {
+    if valor%2 == 0 {
+        continue // Continúa al siguiente ciclo sin ejecutar el resto del código
+    }
+    fmt.Println(valor) // Imprime solo números impares
+}
+Esto permite ciclos selectivos basados en condiciones más específicas, ideales para secuencias matemáticas o filtros rápidos.
+
+Te recomendamos practicar estas diferentes estructuras para consolidar su entendimiento y sacar provecho de la versatilidad del ciclo for en tus desarrollos con Go. ¿Se te ocurre alguna otra aplicación práctica del ciclo for que te gustaría compartir en los comentarios?
