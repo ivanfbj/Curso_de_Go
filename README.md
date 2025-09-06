@@ -241,3 +241,65 @@ Define una cadena con tu nombre.
 Crea una variable entera con tu edad.
 Imprime ambos valores en consola usando fmt.Println().
 Comparte tu experiencia y resultados en los comentarios, ¡me encantaría saber cómo te fue!
+
+## Clase 6: Condicionales if y else en Go con operadores básicos
+
+Resumen
+
+Dominar los operadores condicionales if y else en Go es esencial al comenzar en la programación con este lenguaje. Comprender cómo funcionan estas sentencias te ayuda a controlar el flujo de ejecución de tus programas, permitiéndote tomar decisiones según diversas condiciones. A continuación verás claramente cómo implementarlos y ponerlos en práctica.
+
+¿Qué son los condicionales if y else en Go?
+La sentencia condicional if-else permite a un programa ejecutar ciertas acciones dependiendo si una condición específica se cumple o no. Veamos cómo utilizarla con ejemplos sencillos:
+
+nombre := "Amín"
+edad := 40
+
+if nombre == "Amín" {
+    fmt.Println("Hola, Amín")
+} else {
+    fmt.Println("Hola, desconocido")
+}
+Este código evalúa la condición del nombre y responde según coincida o no con la cadena establecida.
+
+¿Cómo manejar condiciones con edades?
+También puedes utilizar condicionales para evaluar datos numéricos como la edad. Observa cómo verificar si alguien tiene edad suficiente para votar:
+
+edad := 40
+
+if edad >= 18 {
+    fmt.Println("Ya puedes votar")
+}
+Esta condición revisa si el valor de la variable edad es 18 o más y muestra un mensaje según corresponda.
+
+¿Cuál es la utilidad del operador '%' en condiciones?
+El operador "%" se usa para verificar el residuo de una división, lo que puede ayudarte a determinar ciertos comportamientos, como saber si un número es par o impar:
+
+if 8 % 2 == 0 {
+    fmt.Println("El número es par")
+} else {
+    fmt.Println("El número es impar")
+}
+En la práctica, al ejecutar este código, verás claramente el resultado de la evaluación, mostrando si la operación es exactamente divisible por el número indicado.
+
+¿Qué ventajas tiene declarar variables dentro del if?
+En Go puedes declarar variables directamente dentro del condicional if, facilitando el manejo interno y aislado de variables temporales:
+
+if numero := 9; numero < 0 {
+    fmt.Println("Número negativo")
+} else if numero < 10 {
+    fmt.Println("Número es de un solo dígito")
+} else {
+    fmt.Println("Número mayor a nueve")
+}
+Esta forma puede parecer confusa al principio, pero facilita la lógica al mantener variables solo mientras son relevantes, liberando espacio y mejorando la legibilidad.
+
+¿Cómo ejecutar y ver los resultados en la terminal?
+Para ejecutar y observar estos resultados en la terminal, después de guardar tus cambios en el archivo principal, ingresa:
+
+go run main.go
+Al hacerlo, tendrás inmediato feedback visual sobre las condiciones aplicadas.
+
+¿Cómo mejorar en la práctica de los condicionales?
+Te recomiendo practicar variando los tipos de datos como enteros, booleanos o decimales para entender sus peculiaridades. Utiliza valores diferentes en condiciones similares para consolidar tu comprensión y afiánzate con la sintaxis de Go.
+
+¿Qué resultados obtuviste en tus prácticas? Deja tus experiencias o dudas sobre el uso de condicionales en Go en los comentarios.
