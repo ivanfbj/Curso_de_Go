@@ -364,3 +364,60 @@ for valor := range [6]int{} {
 Esto permite ciclos selectivos basados en condiciones más específicas, ideales para secuencias matemáticas o filtros rápidos.
 
 Te recomendamos practicar estas diferentes estructuras para consolidar su entendimiento y sacar provecho de la versatilidad del ciclo for en tus desarrollos con Go. ¿Se te ocurre alguna otra aplicación práctica del ciclo for que te gustaría compartir en los comentarios?
+
+## Clase 8: Uso de la sentencia switch en Go para selección condicional
+
+Resumen
+
+La sentencia switch en el lenguaje de programación Go permite evaluar variables y ejecutar distintos bloques de código dependiendo de su valor. Es muy útil para crear programas que requieran tomar decisiones basadas en una opción específica o condición cumplida, facilitando su comprensión y eficiencia.
+
+¿Qué es la sentencia switch y cómo funciona?
+La sentencia switch evalúa una variable o expresión y, basándose en el valor obtenido, ejecuta el código que coincida con ese caso específico. A diferencia de las estructuras cíclicas, como la sentencia for, switch no repite la ejecución, sino que hace una selección única basada en condiciones dadas.
+
+Ejemplo básico de switch
+Se define primero una variable entera, I:
+
+var I int = 2
+switch I {
+case 1:
+    fmt.Println("uno")
+case 2:
+    fmt.Println("dos")
+case 3:
+    fmt.Println("tres")
+}
+Al ejecutar este código, la consola mostrará el resultado según el valor asignado a I. En este caso específico, como la variable tiene el valor dos, mostrará "dos".
+
+¿Cómo incluir sentencias switch avanzadas con el paquete time?
+Además del uso básico, es posible emplear sentencias switch más elaboradas utilizando el paquete time. Este nos permite manejar fechas y horas dentro del programa:
+
+import "time"
+
+switch time.Now().Weekday() {
+case time.Saturday, time.Sunday:
+    fmt.Println("A descansar")
+default:
+    fmt.Println("Toca grabar más cursos en Platzi")
+}
+En este ejemplo, cuando el día actual es sábado o domingo, el código imprime "A descansar". Si es cualquier otro día, mostrará "Toca grabar más cursos en Platzi".
+
+Evaluación de la hora del día
+También puedes utilizar switch para determinar acciones según la hora actual:
+
+tiempo := time.Now()
+switch {
+case tiempo.Hour() < 12:
+    fmt.Println("Debes decir buenos días")
+default:
+    fmt.Println("Debes decir buenas tardes")
+}
+Este código ejecutará instrucciones diferentes según sea antes o después del mediodía.
+
+Recomendaciones prácticas
+Al trabajar con sentencias switch, ten en cuenta lo siguiente:
+
+Puedes declarar variables fuera del switch o directamente dentro del mismo.
+Siempre utiliza las palabras reservadas exactas (por ejemplo time.Saturday), ya que no aceptará traducciones no registradas en Go.
+Recuerda cerrar correctamente todas las llaves {} para evitar errores en el código.
+Reto adicional
+Prueba utilizar la función time.Now().Weekday() implementando un switch que transforme el resultado del día al idioma español. Puedes compartir tu solución y experiencia en los comentarios para debatir alternativas y optimizaciones.
