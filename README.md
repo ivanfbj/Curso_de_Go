@@ -143,3 +143,60 @@ func main() {
 Esta gestión directa refuerza un control estricto sobre las dependencias utilizadas dentro del código, garantizando que solamente se incluya aquello que se necesita expresamente.
 
 Cuéntame, ¿habías observado ya esta gestión de paquetes en tus proyectos con Go?
+
+## Clase 4: Declaración de variables básicas en Go
+
+Resumen
+
+Comenzar a programar en un nuevo lenguaje puede parecer complicado, pero entender la manera en que Go maneja las variables te facilitará mucho este proceso. A continuación, aclaramos la sintaxis básica para declarar variables en Go, mostrando distintos tipos de variables como cadenas, enteros y booleanos.
+
+¿Cómo se declaran variables simples en Go?
+Declarar variables en Go es sencillo. Para comenzar con lo básico:
+
+Usa la palabra clave var seguida del nombre de tu variable.
+Asigna un valor para que Go identifique automáticamente el tipo.
+Un ejemplo claro sería:
+
+```GO
+var cadena = "inicial"
+```
+
+Más adelante, puedes mostrar fácilmente esta variable imprimiéndola con fmt.Println(cadena).
+
+¿Cuáles son los tipos de datos básicos?
+Los tipos de datos más sencillos que Go identifica automáticamente y que se pueden declarar directamente son:
+
+String (cadena): datos textuales.
+Int (enteros): números enteros.
+Bool (booleanos): verdadero (`true`) o falso (`false`).
+Por ejemplo:
+
+```GO
+var enteroUno, enteroDos int = 10, 20
+var booleano = true
+```
+
+¿Cómo declarar múltiples variables a la vez?
+Go permite declarar varias variables en una sola línea, asignando valores simultáneamente:
+
+```GO
+var enteroUno, enteroDos int = 10, 20
+```
+
+Esto es particularmente útil, pues simplifica el código.
+
+¿Cuál es el valor por defecto de las variables sin asignación?
+Una particularidad muy práctica de Go es que establece valores por defecto cuando no asignas explícitamente un valor. Por ejemplo, si declaras un entero sin asignarle valor alguno:
+
+var enteroSimple int
+Su valor por defecto será cero (0). Posteriormente puedes asignar valores si lo necesitas.
+
+¿Qué otras alternativas existen para declarar variables?
+Una forma más abreviada y directa para inicializar variables es usando :=:
+
+fruta := "manzana"
+Esto permite que Go infiera automáticamente el tipo de dato que estás asignando, simplificando aún más tu código.
+
+Importante: recuerda que en Go todas las variables declaradas deben ser utilizadas; de lo contrario, no podrás compilar tu aplicación.
+
+Ahora que conoces las distintas maneras en que puedes declarar variables en Go, puedes elegir la que mejor se adapte a tu estilo de programación. ¡Experimenta y personaliza tu proceso de aprendizaje en Go!
