@@ -421,3 +421,56 @@ Siempre utiliza las palabras reservadas exactas (por ejemplo time.Saturday), ya 
 Recuerda cerrar correctamente todas las llaves {} para evitar errores en el código.
 Reto adicional
 Prueba utilizar la función time.Now().Weekday() implementando un switch que transforme el resultado del día al idioma español. Puedes compartir tu solución y experiencia en los comentarios para debatir alternativas y optimizaciones.
+
+## Clase 9: Declaración y uso básico de arreglos en Go
+
+Resumen
+
+Aprender a utilizar arreglos en Go es fundamental cuando se trabaja con datos. Los arreglos nos permiten organizar información de manera eficiente y sencilla. Vamos a ver cómo crearlos, mostrarlos y aprovechar al máximo las características del lenguaje.
+
+¿Qué es un arreglo en lenguaje Go?
+Un arreglo (array) en Go es una estructura que permite almacenar múltiples valores del mismo tipo. Para declararlo, se utiliza una sintaxis sencilla:
+
+var arreglo [5]int
+Este código crea un arreglo de cinco posiciones, todas inicializadas en cero por defecto.
+
+¿Cómo visualizar los valores de un arreglo?
+Para mostrar todos los elementos del arreglo en la terminal, utilizamos la función Println() del paquete fmt:
+
+fmt.Println("Arreglo completo:", arreglo)
+Si aún no asignamos valores, la salida mostrará ceros en todas las posiciones.
+
+¿Cómo insertar y acceder a valores específicos de un arreglo?
+Puedes asignar un valor específico a una posición concreta usando corchetes con el índice:
+
+arreglo[4] = 100
+Esto coloca el valor 100 en la posición número 4 del arreglo (recordando que los índices comienzan en cero). Puedes acceder directamente a este valor escribiendo:
+
+fmt.Println("Elemento en la posición cuatro:", arreglo[4])
+¿Cómo conocer el tamaño de un arreglo en Go?
+En Go, la función len() devuelve el número de elementos de un arreglo:
+
+fmt.Println("Tamaño del arreglo:", len(arreglo))
+El resultado indicará exactamente la cantidad de posiciones declaradas inicialmente.
+
+¿Qué diferencia hay entre un arreglo tradicional y uno con valores asignados en Go?
+Go permite declarar arreglos asignando directamente los valores iniciales de cada posición, facilitando la creación de estructuras de datos rápidas:
+
+lista := [5]int{1, 2, 3, 4, 5}
+fmt.Println("Lista original:", lista)
+Este método es más directo y explícito en comparación con la declaración tradicional.
+
+¿Cómo funcionan los arreglos de tamaño inferido?
+En Go también existe la posibilidad de crear arreglos con tamaño inferido, es decir, permite al lenguaje decidir automáticamente el número de elementos según la cantidad asignada:
+
+lista2 := [...]int{1, 2, 3, 4, 5, 6}
+fmt.Println("Tamaño del arreglo inferido:", len(lista2))
+Aquí, Go ajusta automáticamente la cantidad de posiciones basándose en los valores asignados, proporcionando mayor flexibilidad al programador.
+
+¿Cómo utilizar arreglos de manera creativa en Go?
+Utiliza los arreglos combinados con sentencias como for o switch para realizar operaciones más sofisticadas y eficientes:
+
+Iterar sobre arreglos para acceder a los datos.
+Realizar operaciones matemáticas o métricas sobre sus valores.
+Crear estructuras dinámicas con arreglos inferidos que optimicen el procesamiento de información.
+Practica estas técnicas en diferentes contextos para potenciar tus habilidades en Go. ¿Has probado hacer algún proyecto interesante con arreglos hasta ahora? ¡Comparte cómo lo afrontaste y qué aprendiste al respecto!
