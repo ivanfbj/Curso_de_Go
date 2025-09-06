@@ -200,3 +200,44 @@ Esto permite que Go infiera automáticamente el tipo de dato que estás asignand
 Importante: recuerda que en Go todas las variables declaradas deben ser utilizadas; de lo contrario, no podrás compilar tu aplicación.
 
 Ahora que conoces las distintas maneras en que puedes declarar variables en Go, puedes elegir la que mejor se adapte a tu estilo de programación. ¡Experimenta y personaliza tu proceso de aprendizaje en Go!
+
+## Clase 5: Conversión entre tipos de datos numéricos y cadenas en Go
+
+Resumen
+
+Dominar la conversión de tipos de datos en Go es esencial para combinar variables de diferente naturaleza y optimizar tus aplicaciones. Saber manejar correctamente números enteros, flotantes y cadenas te permitirá tener el control al realizar operaciones y evitar errores inesperados.
+
+¿Cómo declarar variables numéricas en Go?
+En Go es posible definir variables numéricas explícita o implícitamente. Veamos dos maneras prácticas:
+
+Explícita:
+var numeroEntero int = 10
+Implícita:
+numeroDos := 20
+Ambas opciones son válidas y funcionales según el contexto de uso.
+
+¿Qué ocurre al sumar diferentes tipos numéricos?
+Cuando trabajas con tipos de datos diferentes, como variables enteras y flotantes, Go te exige una conversión explícita del tipo de dato. Observa este ejemplo:
+
+var numeroEntero int = 10
+var numeroDoble float64 = 20.5
+resultado := numeroEntero + int(numeroDoble)
+fmt.Println(resultado)
+Aquí necesitas convertir la variable flotante numeroDoble a entero antes de sumar. Ten presente que Go truncará, no redondeará; por ejemplo, 20.5 se convierte en 20.
+
+¿Cómo concatenar cadenas correctamente?
+La concatenación de cadenas se realiza de forma sencilla usando el operador +. Mira cómo es posible unir nombre y apellido:
+
+var nombre string = "Juan"
+apellido := "González"
+nombreCompleto := nombre + " " + apellido
+fmt.Println(nombreCompleto)
+Este bloque crea una cadena llamada nombreCompleto y la visualiza fácilmente en la consola.
+
+¿Te animas a probar?
+Un ejercicio práctico es escribir un código similar que muestre tu nombre y tu edad en consola:
+
+Define una cadena con tu nombre.
+Crea una variable entera con tu edad.
+Imprime ambos valores en consola usando fmt.Println().
+Comparte tu experiencia y resultados en los comentarios, ¡me encantaría saber cómo te fue!
