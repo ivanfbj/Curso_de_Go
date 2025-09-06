@@ -521,3 +521,63 @@ Facilidad en la manipulación y comparación de datos.
 Los slices proporcionan una solución poderosa para situaciones en las que los arreglos tradicionales muestran limitaciones, optimizando así el desarrollo y el mantenimiento del código.
 
 ¿Has tenido alguna experiencia usando slices en Go? Comparte tu opinión o dudas en los comentarios para seguir aprendiendo juntos.
+
+## Clase 11: Mapas en Go: creación, acceso y manipulación de datos clave-valor
+
+Resumen
+
+Los Maps en el lenguaje Go representan una estructura poderosa y flexible para gestionar datos organizados en pares clave-valor (key-value). Esta herramienta, también conocida como diccionario en otros lenguajes como Python, Java o C, ofrece diversas funciones y métodos para ayudarte a organizar y acceder fácilmente a tu información.
+
+¿Qué son los Maps en Go y cómo se crean?
+En Go, los Maps almacenan elementos en pares de clave-valor. Puedes considerarlos similares a los diccionarios en otros lenguajes de programación. Su creación es sencilla, utilizando la función make. Por ejemplo:
+
+mapa := make(map[string]int)
+mapa["amin"] = 4
+mapa["Espinoza"] = 8
+En este ejemplo, cada clave es una cadena (string) y su valor un entero (int). Puedes agregar tantas claves y valores como necesites.
+
+¿Cómo acceder a los valores del Map?
+Para consultar un dato específico, basta con referirte a su clave:
+
+versionUno := mapa["Espinoza"] // Devuelve 8
+fmt.Println(versionUno)
+
+versionDos := mapa["amin"] // Devuelve 4
+fmt.Println(versionDos)
+Es una operación simple y directa para obtener información almacenada.
+
+¿Cómo verificar la existencia de un dato?
+Puedes usar la sintaxis especial de guion bajo (underscore) y añadir una segunda variable:
+
+_, dato := mapa["amin"]
+fmt.Println(dato) // Devuelve true si existe el dato.
+Si el valor existe, obtendrás true.
+
+¿Obtener la longitud de un Map en Go?
+Como con slices o arreglos, puedes obtener cuántos registros existen en el mapa utilizando la función len:
+
+fmt.Println(len(mapa)) // Devuelve la longitud del mapa
+¿Cómo eliminar registros en los Maps?
+Para borrar elementos específicos, Go ofrece el método delete:
+
+delete(mapa, "amin") // Elimina únicamente la clave "amin".
+Si necesitas limpiar el mapa completo, utiliza el método clear:
+
+clear(mapa) // Borra todos los registros.
+Ambos métodos permiten gestionar el contenido del mapa según tus necesidades.
+
+¿Cómo comparar mapas en Go?
+Para verificar si dos mapas son iguales, Go tiene soporte para comparaciones mediante el método maps.Equal():
+
+import "maps"
+
+nuevoMapaUno := map[string]int{"Miranda": 7, "Espinoza": 8}
+nuevoMapaDos := map[string]int{"Miranda": 7, "Espinoza": 8}
+
+if maps.Equal(nuevoMapaUno, nuevoMapaDos) {
+  fmt.Println("Los mapas son iguales")
+}
+Esta función permite determinar con rapidez si ambos mapas contienen idénticos pares clave-valor.
+
+Usar Maps eficientemente puede facilitar y agilizar el manejo de grandes fuentes de datos organizados.
+p
