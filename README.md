@@ -580,4 +580,67 @@ if maps.Equal(nuevoMapaUno, nuevoMapaDos) {
 Esta función permite determinar con rapidez si ambos mapas contienen idénticos pares clave-valor.
 
 Usar Maps eficientemente puede facilitar y agilizar el manejo de grandes fuentes de datos organizados.
-p
+
+## Clase 12: Cómo crear y usar funciones personalizadas en Go
+
+Resumen
+
+El manejo de funciones o métodos en Go es esencial para simplificar tareas repetitivas y mantener un código organizado. Una función es una sentencia específica que ejecuta acciones encapsuladas entre paréntesis. Por ejemplo, la función len() evalúa la longitud de un arreglo.
+
+¿Qué es exactamente una función en Go?
+Una función en Go está compuesta por la palabra reservada func, seguida de un nombre descriptivo y parámetros entre paréntesis. Los parámetros especifican el tipo de dato requerido, permitiendo múltiples variables del mismo o diferentes tipos.
+
+Por ejemplo:
+
+func suma(numero1 int, numero2 int) int {
+    resultado := numero1 + numero2
+    return resultado
+}
+Aquí, la función suma recibe dos parámetros enteros y devuelve un resultado entero después de realizar la operación solicitada.
+
+¿Cómo puedo crear e invocar funciones personalizadas?
+Crear múltiples funciones con diferentes objetivos mejora la claridad y reutilización. Puedes declarar funciones con diferentes cantidades de parámetros.
+
+Ejemplo una función que suma tres números:
+
+func sumaLarga(numero1, numero2, numero3 int) int {
+    resultado := numero1 + numero2 + numero3
+    return resultado
+}
+Invocas estas funciones en tu función principal main, pasando los parámetros necesarios:
+
+```GO
+func main() {
+    var numero1, numero2, numero3 int
+
+    fmt.Print("Ingresa el primer número: ")
+    fmt.Scanln(&numero1)
+
+    fmt.Print("Ingresa el segundo número: ")
+    fmt.Scanln(&numero2)
+
+    fmt.Print("Ingresa el tercer número: ")
+    fmt.Scanln(&numero3)
+
+    resultado := suma(numero1, numero2)
+    fmt.Println("La suma de los dos números es", resultado)
+
+    resultadoLargo := sumaLarga(numero1, numero2, numero3)
+    fmt.Println("La suma de los tres números es", resultadoLargo)
+}
+```
+
+Al ejecutar este programa mediante la consola, la aplicación pide a los usuarios ingresar los valores para luego realizar las sumas solicitadas.
+
+¿Cómo puedo evitar errores en mis funciones?
+Al construir aplicaciones es habitual enfrentarse a posibles errores. En operaciones como la división, donde puedes dividir por cero, resulta útil evaluar previamente:
+
+if numero2 == 0 {
+    fmt.Println("Error: no se puede dividir entre cero.")
+} else {
+    resultado := numero1 / numero2
+    fmt.Println("El resultado de la división es", resultado)
+}
+Estos controles simples evitan errores críticos y mejoran la robustez del código.
+
+Te invito a practicar creando múltiples funciones como restas, multiplicaciones, divisiones y asegurarte de manejar correctamente posibles errores. ¿Tienes otras funciones que quisieras aprender a programar? Comparte tus dudas en los comentarios.
