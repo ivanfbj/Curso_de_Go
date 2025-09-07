@@ -688,3 +688,44 @@ Con esto, únicamente recuperas el segundo mapa.
 
 ¿Tienes más ideas para probar?
 La implementación es sencilla: prueba ahora y crea tus propias funciones que concatenen cadenas de los nombres de tus familiares. ¡Anímate a experimentar y profundizar en esta útil característica de Go! Nos encantaría saber qué te parece esta opción y cómo la estás utilizando.
+
+## Clase 14: Funciones variádicas en Go para múltiples parámetros
+
+Resumen
+
+Las funciones variádicas en Go son herramientas útiles que permiten manejar un número indeterminado de parámetros, simplificando tu código y aumentando la flexibilidad. A pesar de su nombre llamativo, estas funciones son muy fáciles de entender y aplicar en proyectos reales y prácticos, ahorrándote líneas de código innecesarias.
+
+¿Qué son las funciones variádicas y por qué usarlas?
+Una función variádica es aquella que puede aceptar un número variable de argumentos. Quizá ya la has empleado sin darte cuenta, por ejemplo, la función Println del paquete fmt es variádica porque podemos pasarle diversas cantidades y tipos de parámetros, reaccionando correctamente a todos ellos.
+
+Ejemplo con Println:
+
+fmt.Println("Hola mundo")
+var nombre string = "amin"
+fmt.Println("Hola", nombre)
+fmt.Println(1, 2, 3, 4, 5)
+¿Cómo crear una función variádica en Go?
+Para definir tu propia función variádica en Go, solo necesitas usar tres puntos suspensivos (...) al declarar el parámetro que variará en cantidad. Aquí tienes cómo realizar una función que sume varios números:
+
+func suma(numeros ...int) {
+    fmt.Println("Números:", numeros)
+    total := 0
+    for _, numero := range numeros {
+        total += numero
+    }
+    fmt.Println("La suma es", total)
+}
+¿Cómo usar una función variádica en distintos escenarios?
+Estas funciones ofrecen una versatilidad notable. Puedes llamarlas pasando números individuales o incluso un arreglo con múltiples valores. Estos ejemplos ilustran claramente su flexibilidad:
+
+suma(1, 2)
+suma(1, 2, 3)
+
+numeros := []int{1, 2, 3, 4, 5}
+suma(numeros...)
+Cuando ejecutas estos ejemplos en tu terminal con go run main.go, obtendrás:
+
+La suma de 1 y 2, resultando 3.
+La suma de los tres números iniciales (1, 2, 3), dando 6.
+Finalmente, la suma del arreglo completo (1 hasta 5), que será 15.
+Invierte tiempo en practicar estas funciones en tu entorno de desarrollo. ¿Has tenido dificultades con estas funciones en proyectos anteriores? Comparte tu experiencia o dudas para seguir avanzando juntos en tu aprendizaje.
