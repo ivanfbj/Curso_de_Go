@@ -644,3 +644,47 @@ if numero2 == 0 {
 Estos controles simples evitan errores críticos y mejoran la robustez del código.
 
 Te invito a practicar creando múltiples funciones como restas, multiplicaciones, divisiones y asegurarte de manejar correctamente posibles errores. ¿Tienes otras funciones que quisieras aprender a programar? Comparte tus dudas en los comentarios.
+
+## Clase 13: Funciones con múltiples valores de retorno en Go
+
+Resumen
+
+¿Sabías que en Go puedes retornar múltiples valores desde una sola función? Esta particularidad del lenguaje Go brinda flexibilidad y claridad en el manejo de datos. Aunque otros lenguajes también ofrecen esta opción a través de estructuras como tuplas o arreglos, Go destaca por incorporarlo directamente. Veamos cómo implementarlo fácilmente.
+
+¿Para qué sirve retornar múltiples valores desde una función en Go?
+A veces necesitamos obtener más de un resultado en una sola llamada a una función. Por ejemplo, devolver dos mapas con diferentes nombres y apellidos puede hacerse de manera sencilla en Go. Esto evita la necesidad de ejecutar múltiples métodos o bucles.
+
+¿Cómo declarar funciones para múltiples retornos?
+En Go, declarar funciones que retornan varios valores se realiza especificando los tipos deseados al declarar la función. Observa este ejemplo sencillo:
+
+```go
+func valoresMultiples(nombreUno string, nombreDos string, apellido string) (map[string]string, map[string]string) {
+    mapaUno := make(map[string]string)
+    mapaDos := make(map[string]string)
+
+    mapaUno[nombreUno] = apellido
+    mapaDos[nombreDos] = apellido
+
+    return mapaUno, mapaDos
+}
+```
+
+Con esta función claramente definida, ahora puedes obtener múltiple información en una sola interacción.
+
+¿Cómo invocar una función que retorna varios resultados?
+Llamar una función con múltiples retornos es igual de sencillo, basta con asignar sus retornos a variables separadas por comas, así:
+
+mapaPrimerNombre, mapaSegundoNombre := valoresMultiples("Amin", "Miranda", "Espinoza")
+fmt.Println(mapaPrimerNombre)
+fmt.Println(mapaSegundoNombre)
+Esto imprimirá los mapas con nombres y apellidos de manera inmediata, práctica y eficiente.
+
+¿Qué sucede si quiero ignorar un valor devuelto?
+Para ignorar valores que no necesitamos, Go utiliza un guión bajo (_). Esto permite seleccionar sólo aquellos datos realmente útiles para tu lógica de programación:
+
+_, mapaSegundoNombre := valoresMultiples("Amin", "Miranda", "Espinoza")
+fmt.Println(mapaSegundoNombre)
+Con esto, únicamente recuperas el segundo mapa.
+
+¿Tienes más ideas para probar?
+La implementación es sencilla: prueba ahora y crea tus propias funciones que concatenen cadenas de los nombres de tus familiares. ¡Anímate a experimentar y profundizar en esta útil característica de Go! Nos encantaría saber qué te parece esta opción y cómo la estás utilizando.
