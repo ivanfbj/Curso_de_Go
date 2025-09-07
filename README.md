@@ -729,3 +729,53 @@ La suma de 1 y 2, resultando 3.
 La suma de los tres números iniciales (1, 2, 3), dando 6.
 Finalmente, la suma del arreglo completo (1 hasta 5), que será 15.
 Invierte tiempo en practicar estas funciones en tu entorno de desarrollo. ¿Has tenido dificultades con estas funciones en proyectos anteriores? Comparte tu experiencia o dudas para seguir avanzando juntos en tu aprendizaje.
+
+## Clase 15: Funciones recursivas en Go para cálculos matemáticos
+
+Resumen
+
+Implementar funciones recursivas en el lenguaje Go facilita tareas matemáticas complejas, como cálculos factoriales o la secuencia de Fibonacci. La recursividad permite a una función llamarse a sí misma repetidamente hasta cumplir cierta condición. Sin embargo, requiere precaución para evitar ciclos infinitos que consuman excesivamente los recursos de la computadora.
+
+¿Qué es una función recursiva y cómo funciona en Go?
+En Go, la recursividad hace posible que una función se invoque en múltiples ocasiones para lograr un resultado específico. La clave de esta técnica radica en definir claramente las condiciones para que deje de llamarse, previniendo así ciclos infinitos y saturación de la memoria RAM o el disco de tu equipo.
+
+¿Cómo crear una función recursiva para calcular factoriales en Go?
+El cálculo factorial de un número multiplica sucesivamente todos los números anteriores al mismo. Por ejemplo, el factorial de siete (7!) es siete multiplicado por seis, cinco, cuatro, etc.
+
+Esto puede implementarse fácilmente usando recursividad en Go. Primero, crea una función y luego invócala:
+
+func factorial(n int) int {
+  if n == 0 {
+    return 1
+  }
+  return n * factorial(n-1)
+}
+Invocando esta función desde main obtienes el resultado esperado rápidamente:
+
+fmt.Println(factorial(7))
+La salida final es 5040, producto de multiplicar sucesivamente desde el siete hasta llegar al uno.
+
+¿Cómo usar la recursividad con la secuencia Fibonacci en Go?
+La secuencia Fibonacci es otro ejemplo práctico y común de recursividad. El valor de cada posición se obtiene sumando los dos valores anteriores, comenzando desde cero y uno. Observa este ejemplo:
+
+var fibonacci func(int) int
+fibonacci = func(n int) int {
+  if n < 2 {
+    return n
+  }
+  return fibonacci(n-1) + fibonacci(n-2)
+}
+Al imprimir mediante:
+
+fmt.Println(fibonacci(7))
+El resultado será 13, correspondiente a la posición siete en la secuencia Fibonacci.
+
+¿Qué precauciones tomar al implementar funciones recursivas?
+Aunque la sintaxis para crear funciones recursivas en Go es relativamente simple, considera estas recomendaciones para evitar problemas:
+
+Define claramente la condición que detiene la recursividad.
+Realiza un análisis detallado antes de implementar tu función recursiva.
+Cuida que el ciclo no pueda volverse infinito y saturar los recursos del sistema.
+Puedes practicar con diversas secuencias matemáticas que te permitirán entender mejor cómo gestionar funciones recursivas eficientemente en Go.
+
+Explorar estos ejemplos prácticos ayuda a afianzar tu comprensión sobre la recursividad en Go; ¿qué otra función matemática recursiva te gustaría implementar?
