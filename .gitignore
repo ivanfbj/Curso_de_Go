@@ -33,3 +33,4 @@ Thumbs.db
 
 # Go module files
 /go.sum
+.cursor/rules/rule-for-commit.mdc

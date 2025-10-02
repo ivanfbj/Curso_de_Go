@@ -827,3 +827,32 @@ Programas videojuegos o aplicaciones que dependan extremadamente del rendimiento
 Integrar punteros en Go es una práctica habitual y recomendada en sistemas o aplicaciones que buscan la optimización técnica y la eficiencia de recursos.
 
 ¿Has tenido experiencias trabajando con punteros en Go? Comparte tus prácticas y desafios al usarlos en los comentarios.
+
+## Clase 17: Runas y caracteres Unicode en Go: optimización de memoria
+
+Resumen
+
+El manejo de cadenas y caracteres en Go presenta particularidades fascinantes, especialmente al considerar caracteres Unicode y runas. En Go, cada carácter no es solo un símbolo visual, sino una entidad llamada runa, orientada a optimizar el rendimiento del lenguaje y mejorar considerablemente la gestión de memoria.
+
+¿Qué es exactamente una runa en Go?
+A diferencia de otros lenguajes donde se utilizan caracteres simples, Go define cada símbolo visual dentro de una cadena como "runa". Las runas son caracteres con propiedades únicas que permiten representar cualquier símbolo Unicode:
+
+Un carácter alfanumérico simple consume mucho menos espacio que caracteres Unicode complejos.
+Cada runa corresponde a un código específico dentro de la memoria, optimizando recursos.
+¿Cómo mide Go la longitud de las cadenas con caracteres Unicode?
+Para entender la gestión de memoria de cadenas y caracteres Unicode específicos en Go, se emplea UTF-8:
+
+Un saludo en tailandés, aunque visualmente breve, consume más memoria que un simple "hola".
+Al medir la longitud del saludo tailandés, se obtienen dieciocho caracteres, mientras que "hola" solo consume cuatro.
+Esto demuestra cómo Go identifica individualmente cada runa en memoria y las contabiliza de manera precisa.
+
+¿De qué manera puede visualizarse el uso de memoria con runas?
+Para profundizar y obtener detalles específicos sobre cómo se almacenan y manejan estos caracteres, se utiliza la iteración mediante ciclos for y el paquete Unicode (UTF-8):
+
+Cada runa del saludo puede extraerse y analizarse, mostrando exactamente dónde inicia en la memoria y cuál es su valor numérico.
+Este nivel de análisis permite mejorar no solo la eficiencia del código, sino también obtener un control detallado del manejo de memoria.
+Esta práctica evidencia un nivel avanzado del dominio del lenguaje Go, esencial para optimizar el rendimiento de aplicaciones.
+
+¿Qué experiencias has tenido con el manejo de runas y caracteres Unicode en Go? Comparte tu opinión y participa en nuestro intercambio de ideas.
+
+Recurso adicional: [Strings, bytes, runes and characters in Go](https://go.dev/blog/strings)
