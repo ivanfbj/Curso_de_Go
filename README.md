@@ -779,3 +779,51 @@ Cuida que el ciclo no pueda volverse infinito y saturar los recursos del sistema
 Puedes practicar con diversas secuencias matemáticas que te permitirán entender mejor cómo gestionar funciones recursivas eficientemente en Go.
 
 Explorar estos ejemplos prácticos ayuda a afianzar tu comprensión sobre la recursividad en Go; ¿qué otra función matemática recursiva te gustaría implementar?
+
+## Clase 16: Punteros en Go para optimizar rendimiento del sistema
+
+Resumen
+
+Optimizar el rendimiento de un sistema es clave en lenguajes de programación como Go. Entre las herramientas más útiles para lograr dicha optimización están los punteros. Aunque solían considerarse complejos, dominar los punteros ayuda a reducir considerablemente el consumo de recursos del sistema, especialmente cuando se trata de operaciones concurrentes, hardware o videojuegos exigentes.
+
+¿Qué son los punteros en programación?
+Los punteros permiten modificar el valor de una variable directamente en su ubicación de memoria en lugar de cambiar el valor mismo de la variable. Esto resulta beneficioso en contextos donde se requiera un uso eficiente de los recursos o alto rendimiento.
+
+Permiten realizar cambios directos en la memoria.
+Reducen el uso de recursos del sistema.
+Mejoran el rendimiento en aplicaciones críticas.
+¿Cómo funcionan los punteros en Go?
+La implementación de punteros en Go es sencilla. Puedes actualizar valores en memoria directamente al llamar estas variables mediante punteros utilizando dos caracteres: el asterisco (*), que indica un puntero, y el ampersand (&), que se usa para obtener la dirección de memoria de una variable.
+
+Creando y manipulando punteros en Go
+A continuación, un ejemplo práctico básico para entender la manipulación de punteros:
+
+```go
+package main
+
+import "fmt"
+
+func modificarArreglo(argumento *[5]int) {
+    (*argumento)[0] = 42
+}
+
+func main() {
+    numeros := [5]int{1, 2, 3, 4, 5}
+    fmt.Println(numeros)
+
+    modificarArreglo(&numeros)
+    fmt.Println(numeros)
+}
+```
+
+En este ejemplo: - Utilizamos una función para modificar valores del arreglo usando punteros. - El valor inicial del arreglo es [1 2 3 4 5], y después de usar la función con punteros, se modifica el primer valor a 42. - El uso del ampersand (&) permite pasar directamente la dirección de memoria del arreglo sin crear una copia del mismo.
+
+¿Cuándo utilizar los punteros en tus proyectos?
+Aunque implementar punteros puede parecer inicialmente un proceso más complicado en comparación a herramientas alternas, es especialmente recomendable su uso cuando:
+
+Desarrollas sistemas que gestionan numerosas operaciones en simultáneo.
+Trabajas en aplicaciones que exigen alta eficiencia en hardware.
+Programas videojuegos o aplicaciones que dependan extremadamente del rendimiento optimizado.
+Integrar punteros en Go es una práctica habitual y recomendada en sistemas o aplicaciones que buscan la optimización técnica y la eficiencia de recursos.
+
+¿Has tenido experiencias trabajando con punteros en Go? Comparte tus prácticas y desafios al usarlos en los comentarios.
